@@ -1,0 +1,14 @@
+addVertex("Person", "born", 1965, "name", "Tom_Holland");
+addVertex("Person", "born", 1965, "name", "Lana_Wachowski");
+addVertex("Movie", "tagline", "Welcome_to_the_Real_World", "votes", 3651, "title", "The_Matrix", "released", 1999);
+addVertex("Movie", "tagline", "Free_your_mind", "votes", 872, "title", "The_Matrix_Reloaded", "released", 2008);
+addVertex("Movie", "tagline", "Everything_that_has_a_beginning_has_an_end", "votes", 940, "title", "The_Matrix_Revolutions", "released", 2003);
+addEdge("ACTED_IN", 0, 2);
+addEdge("ACTED_IN", 1, 4);
+V("Person").has("name", eq("Lana_Wachowski"));
+V("Person").has("name", eq("Lana_Wachowski")).out("ACTED_IN").has("released", eq(1999));
+V("Person").has("name", eq("Lana_Wachowski")).out("ACTED_IN").has("released", eq(2008));
+V("Person").has("name", eq("Lana_Wachowski")).out("ACTED_IN").has("released", eq(2003));
+V("Person").has("name", eq("Tom_Holland")).out("ACTED_IN").has("released", eq(2008));
+V("Person").has("name", eq("Tom_Holland")).out("ACTED_IN").has("released", eq(2003));
+V("Person").has("name", eq("Tom_Holland")).out("ACTED_IN").has("released", eq(1999));
