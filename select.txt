@@ -1,0 +1,41 @@
+Neo4j
+MATCH (n:li__Noun {wn__definition: "a person who makes demands"})-[:wn__hypernym]->(m:li__Noun) return n, m
+
+
+{
+  "identity": 49,
+  "labels": [
+    "Resource",
+    "ontolex__LexicalConcept",
+    "li__Noun"
+  ],
+  "properties": {
+    "wn__definition": "a person who makes demands",
+    "dct__subject": "noun.person",
+    "uri": "https://en-word.net/id/ewn-10021240-n",
+    "wn__partOfSpeech": "Noun"
+  },
+  "elementId": "49"
+}
+{
+  "identity": 5622,
+  "labels": [
+    "Resource",
+    "ontolex__LexicalConcept",
+    "li__Noun"
+  ],
+  "properties": {
+    "wn__definition": "a human being; person, singular, assertive existential pronoun; pronoun, person, singular; quantifier: assertive existential",
+    "wn__example": [
+      "there was too much for one person to do"
+    ],
+    "dct__subject": "noun.Tops",
+    "wn__partOfSpeech": "Noun",
+    "uri": "https://en-word.net/id/ewn-00007846-n"
+  },
+  "elementId": "5622"
+}
+
+
+Gremlin:
+V("noun").has("wn__definition", eq("a human being; person, singular, assertive existential pronoun; pronoun, person, singular; quantifier: assertive existential")).out("wn__hypernym");

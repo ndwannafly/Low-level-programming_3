@@ -46,7 +46,7 @@
 "true"|"false"          {yylval.boolean = !strcmp(yytext, "true"); return BOOLEAN;}
 
 [a-zA-Z0-9_]+\.[A-Za-z]{1,3}    {yylval.string = strdup(yytext); return FILENAME;}
-[a-zA-Z][a-zA-Z0-9_]*           {yylval.string = strdup(yytext); return WORD;}
+[a-zA-Z][a-zA-Z0-9_ ,\.\/:\-\?\&=\%'@<>|\;\’#+!]*           {yylval.string = strdup(yytext); return WORD;}
 (\.[0-9]+)|([0-9]+(\.[0-9]*)?([eE][+-]?[0-9]+)?)   {
       double f = atof(yytext);
       if (ceil(f) == f) {
